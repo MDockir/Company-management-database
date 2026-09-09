@@ -28,3 +28,15 @@ GROUP BY employees.employee_id,
          employees.first_name,
          employees.last_name
 ORDER BY total_hours DESC;
+
+
+-- Query 3
+-- Shows customers and their projects ordered by budget from highest to lowest.
+
+SELECT customers.customer_name,
+       projects.project_name,
+       projects.budget
+FROM customers
+INNER JOIN projects
+    ON customers.customer_id = projects.customer_id
+ORDER BY projects.budget DESC;
